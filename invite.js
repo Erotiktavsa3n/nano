@@ -3,24 +3,24 @@ const ayarlar = require('./ayarlar.json');
 const Database = require("./Helpers/Database");
 const client = new Client;
 
-const Invites = new Collection(); //pythonic
+const Invites = new Collection(); 
 
-client.on("ready", () => {//pythonic
-    client.guilds.cache.forEach(guild => {//pythonic
-        guild.fetchInvites().then(_invites => {//pythonic
-            Invites.set(guild.id, _invites);//pythonic
-        }).catch(err => { });//pythonic
+client.on("ready", () => {
+    client.guilds.cache.forEach(guild => {
+        guild.fetchInvites().then(_invites => {
+            Invites.set(guild.id, _invites);
+        }).catch(err => { });
     });
 });
 client.on("inviteCreate", (invite) => {
-    var gi = Invites.get(invite.guild.id);//pythonic
+    var gi = Invites.get(invite.guild.id);
     gi.set(invite.code, invite);
-    Invites.set(invite.guild.id, gi);//pythonic
+    Invites.set(invite.guild.id, gi);
 });
 client.on("inviteDelete", (invite) => {
-    var gi = Invites.get(invite.guild.id);//pythonic
+    var gi = Invites.get(invite.guild.id);
     gi.delete(invite.code);
-    Invites.set(invite.guild.id, gi);//pythonic
+    Invites.set(invite.guild.id, gi);
 });
 
 
@@ -40,8 +40,8 @@ client.on("guildMemberAdd", (member) => {
         var invite = invites.find(_i => gi.has(_i.code) && gi.get(_i.code).uses < _i.uses) || gi.find(_i => !invites.has(_i.code)) || guild.vanityURLCode;
         Invites.set(member.guild.id, invites);
         var content = `${member} is joined the server.`, total = 0, regular = 0, _fake = 0, bonus = 0;
-        if(invite == guild.vanityURLCode) content = settings.defaultMessage ? settings.defaultMessage : `-member- is joined the server! But don't know that invitation he came up with. :tada:`;//pythonic
-        else content = settings.welcomeMessage ? settings.welcomeMessage : `The -member-, joined the server using the invitation of the -target-.`;//pythonic
+        if(invite == guild.vanityURLCode) content = settings.defaultMessage ? settings.defaultMessage : `-member- is joined the server! But don't know that invitation he came up with. :tada:`;
+        else content = settings.welcomeMessage ? settings.welcomeMessage : `The -member-, joined the server using the invitation of the -target-.`;
 
         if (invite.inviter) { 
             db.set(`invites.${member.id}.inviter`, invite.inviter.id); 
