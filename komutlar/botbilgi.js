@@ -18,7 +18,7 @@ exports.run = async (client, message, args) => {
     .addField("**__Ram Kullanımı__**", `${(process.memoryUsage().heapUsed / 1024 / 512).toFixed(2) + " MB"}`, true)
     .addField("**__Discord.JS Sürüm__**", `${Discord.version}`, true)
     .addField("**__Konum__**", `Turkey :flag_tr:`, true)
-    .addField("**__Bot Sahibi__**", `AykutGönül#0031`, true)
+    .addField("**__Bot Sahibi__**", `ZyronX`, true)
     .addField("**__İşletim Sistemi__**", ` \`Windows 11 Pro | 64 Bit\` `, true)
     .addField("**__Botun Açıldıgı Pc Sürümü__**",` \`\`\`Windows 11 İşletim Sistemi\`\`\` `)
 
