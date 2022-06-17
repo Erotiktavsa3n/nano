@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
     const db = new Database("./Servers/" + message.guild.id, "Invites");
     var data = db.get(`invites.${message.member.id}`) || { total: 0, fake: 0, inviter: null, regular: 0, bonus: 0, leave: 0 };//pythonic
     var embed = new Discord.MessageEmbed()
-    .setDescription(`**Toplam:** \`${(data.total || 0) + (data.bonus || 0)}\`, **Düzenli** \`${data.regular || 0}\`, **Bonus:** \`${data.bonus || 0}\`, **Çıkanlar:** \`${data.leave || 0}\`, (**Sahte Olanlar:** \`${data.fake || 0}\`)`)//pythonic
+    .setDescription(`**Toplam:** \`${(data.total || 0) + (data.bonus || 0)}\`, **Düzenli** \`${data.regular || 0}\`, **Bonus:** \`${data.bonus || 0}\`, **Çıkanlar:** \`${data.leave || 0}\`, (**Sahte Olanlar:** \`${data.fake || 0}\`)`)
     .setColor("RANDOM");
     message.channel.send(embed);
 };
