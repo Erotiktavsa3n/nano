@@ -23,8 +23,8 @@ collector.on('collect', (reaction, user) => {
      if(reaction.emoji.name == "🌟") {
     const kobscode = new Discord.MessageEmbed()
       .setColor("BLUE")
- .addField("**Ek Komutlar**", `\n**${prefix}__yetkilerim__ = **__Yetkilerini Gösterir__** \n**${prefix}**__ping__ = **__Botun Gecikme Süresini Atar__** \n**${prefix}**__nuke__ = **__Kanalı Komple Siler Ve Yeniden Oluşturur__** \n**${prefix}**__roller__ = **__Sunucudaki Tüm Rolleri Gösterir__** \n**${prefix}** `)
-.setImage("https://cdn.discordapp.com/attachments/772883062085386282/775006230082748436/3.png")
+ .addField("**Ek Komutlar**", `\n**${prefix}__yetkilerim__ = **__Yetkilerini Gösterir__** \n**${prefix}**__ping__ = **__Botun Gecikme Süresini Atar__** \n**${prefix}**__nuke__ = **__Kanalı Komple Siler Ve Yeniden Oluşturur__** \n**${prefix}**__roller__ = **__Sunucudaki Tüm Rolleri Gösterir__** \n**${prefix}**__botbilgi__ = **__Botun Bilgilerini Gösterir__** \n**${prefix}**__isim-değiştir__ = **__İstediğiniz Bir Kullanıcının İsmini Değiştirir__** \n \n **Davet Komutlarını Görmek İçin ⚙️ Basınız `)
+.setImage("https://images-ext-1.discordapp.net/external/Bb032GyJs8yCJiUy7tWQ-YnNRPreLuPDo-xp66eOIeU/https/images-ext-2.discordapp.net/external/H1PQhcDr-EaEvwENT8cUxj8S2yonFZl351YbXXH5sGs/https/media.discordapp.net/attachments/697145772801785876/716671769355747348/1.gif")
   .setThumbnail(client.user.avatarURL())
  menü.edit(kobscode)
   }
