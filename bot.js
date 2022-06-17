@@ -122,7 +122,7 @@ client.elevation = message => {
     return permlvl;
 };
 
-client.login(ayarlar.token).then(
+client.login(process.env.token).then(
   function() {
     console.log("[Token-Log] Token doğru bir şekilde çalışıyor.");
   },
