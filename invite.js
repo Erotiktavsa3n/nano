@@ -75,7 +75,7 @@ client.on("guildMemberRemove", (member) => {
         return;
     }
         if(data === null) data = "Bulunamadı"
-    if(data.isfake && data.inviter){//pythonic
+    if(data.isfake && data.inviter){
         fakecount = db.sub(`invites.${data.inviter}.fake`, 1);
         total = db.sub(`invites.${data.inviter}.total`, 1);
     }
@@ -83,7 +83,7 @@ client.on("guildMemberRemove", (member) => {
         regular = db.sub(`invites.${data.inviter}.regular`, 1);
         total = db.sub(`invites.${data.inviter}.total`, 1);
     }
-    if(data.inviter) bonus = db.get(`invites.${data.inviter}.bonus`) || 0;//pythonic
+    if(data.inviter) bonus = db.get(`invites.${data.inviter}.bonus`) || 0;
     
     var im = member.guild.member(data.inviter)
     if(im) global.onUpdateInvite(im, member.guild.id, Number(total) + Number(bonus));
