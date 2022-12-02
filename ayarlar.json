@@ -1,5 +1,5 @@
 {
-  "prefix": "z!",
-  "sahip" : ["Sahip İd"],
-  "token": "Tokeninizi Buraya Yazmayın Eseg gibi .env Kismina yazın"
+  "prefix": "PREFİX",
+  "sahip": "SAHİPİD",
+  "token": "TOKEN"
 }

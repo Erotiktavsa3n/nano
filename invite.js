@@ -109,4 +109,4 @@ global.onUpdateInvite = (guildMember, guild, total) => {
         guildMember.roles.add(pos.Id);
     });
 }
-client.login(process.env.token)
+client.login(ayarlar.token);

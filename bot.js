@@ -121,8 +121,24 @@ client.elevation = message => {
    if (ayarlar.sahip.includes(message.author.id)) permlvl = 4;
     return permlvl;
 };
+// Otorol 
 
-client.login(process.env.token).then(
+
+client.on('guildMemberAdd', member => {
+  // Rol
+  let rol = "rolid"
+
+  // Sunucuya Giren Kişiye Rol Verme
+  member.roles.add(rol)
+
+  // Hg Mesajı
+  client.channels.cache.get('kanalid').send(`${member} **Kişisine  Rolünü Verildi, Welcome Dostum.**`)
+})
+
+// Rol son
+
+
+client.login(ayarlar.token).then(
   function() {
     console.log("[Token-Log] Token doğru bir şekilde çalışıyor.");
   },
